@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Links, Section } from "../components";
+import { Links, Section, WrappedImage } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
           <h1 className={styles.title}>Wordle Stats</h1>
 
           <p className={styles.description}>A Slack bot for Wordle!</p>
-          <Image
+          <WrappedImage
             alt="Add to Slack"
             height="40"
             width="139"
@@ -30,7 +29,7 @@ const Home: NextPage = () => {
           title="Submit"
           description="Submit your scores to track your Wordle performance!"
         >
-          <Image
+          <WrappedImage
             alt="Slack post showing form to submit Wordle score"
             width="600"
             height="207"
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
           title="Discuss"
           description="Discuss the daily solution with friends!"
         >
-          <Image
+          <WrappedImage
             alt="Slack post showing a post titled '1/31 Solution Thread"
             width="600"
             height="107"
@@ -52,26 +51,24 @@ const Home: NextPage = () => {
           title="Compare"
           description="Compare your scores over time and track your average!"
         >
-          <Image
+          <WrappedImage
             alt="Slack post showing recent scores and average score for a user"
-            width="300"
-            height="228"
+            width="293"
+            height="223"
             src="/DisplayScores.png"
           />
-          <div className={styles.hide_mobile}>
-            <Image
-              alt="Slack post showing recent scores and average score for a second user"
-              width="300"
-              height="228"
-              src="/DisplayScores2.png"
-            />
-          </div>
+          <WrappedImage
+            alt="Slack post showing recent scores and average score for a second user"
+            width="293"
+            height="223"
+            src="/DisplayScores2.png"
+          />
         </Section>
         <Section
           title="Compete"
           description="Compete with your friends to earn first place!"
         >
-          <Image
+          <WrappedImage
             alt="Slack post showing winners of the day"
             width="600"
             height="176"
