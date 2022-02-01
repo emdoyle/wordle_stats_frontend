@@ -6,11 +6,16 @@ export const Layout: FC<FooterProps> = ({
   children,
   privacyPolicy = true,
   support = true,
+  termsOfService = true,
 }) => {
   return (
     <div className={styles.layout}>
       <main className={styles.main}>{children}</main>
-      <Footer privacyPolicy={privacyPolicy} support={support} />
+      <Footer
+        privacyPolicy={privacyPolicy}
+        support={support}
+        termsOfService={termsOfService}
+      />
     </div>
   );
 };

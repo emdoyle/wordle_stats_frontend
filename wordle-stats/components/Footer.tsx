@@ -5,11 +5,13 @@ import { FC } from "react";
 export type FooterProps = {
   privacyPolicy?: boolean;
   support?: boolean;
+  termsOfService?: boolean;
 };
 
 export const Footer: FC<FooterProps> = ({
   privacyPolicy = true,
   support = true,
+  termsOfService = true,
 }) => {
   return (
     <footer className={styles.footer}>
@@ -21,6 +23,11 @@ export const Footer: FC<FooterProps> = ({
       {support && (
         <Link href="/support" passHref>
           <a>Support</a>
+        </Link>
+      )}
+      {termsOfService && (
+        <Link href="/tos" passHref>
+          <a>Terms of Service</a>
         </Link>
       )}
     </footer>
