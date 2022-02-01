@@ -12,6 +12,7 @@ export async function onRequestGet(context) {
     next, // used for middleware or to fetch assets
     data, // arbitrary space for passing data between middlewares
   } = context;
+  const BASE_URL = "https://wordle.0x63problems.dev";
 
   // Parse request URL to get access to query string
   let url = new URL(request.url);
@@ -44,13 +45,13 @@ export async function onRequestGet(context) {
   const imageURL = url.searchParams.get("src");
   if (!imageURL) return new Response('Missing "src" value', { status: 400 });
 
+  let href;
   try {
-    // TODO: Customize validation logic
-    const { hostname, pathname } = new URL(imageURL);
-
+    const parsedURL = new URL(imageURL, BASE_URL);
+    href = parsedURL.href;
     // Optionally, only allow URLs with JPEG, PNG, GIF, or WebP file extensions
     // @see https://developers.cloudflare.com/images/url-format#supported-formats-and-limitations
-    if (!/\.(jpe?g|png|gif|webp)$/i.test(pathname)) {
+    if (!/\.(jpe?g|png|gif|webp)$/i.test(parsedURL.pathname)) {
       return new Response("Disallowed file extension", { status: 400 });
     }
   } catch (err) {
@@ -58,7 +59,7 @@ export async function onRequestGet(context) {
   }
 
   // Build a request that passes through request headers
-  const imageRequest = new Request(imageURL, {
+  const imageRequest = new Request(href, {
     headers: request.headers,
   });
 
