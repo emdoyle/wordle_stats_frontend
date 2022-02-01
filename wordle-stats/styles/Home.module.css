@@ -3,6 +3,7 @@
   background-color: rgba(18,16,22,0.9);
   color: white;
   font-family: Verdana, sans-serif;
+  min-width: 100vw;
 }
 
 .main {

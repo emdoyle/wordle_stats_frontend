@@ -17,14 +17,14 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
       </div>
 
       <Section
-        title="Submit"
-        description="Submit your scores to track your Wordle performance!"
+        title="Compete"
+        description="Compete with your friends to earn first place!"
       >
         <Image
-          alt="Slack post showing form to submit Wordle score"
+          alt="Slack post showing winners of the day"
           width="600"
-          height="207"
-          src="/SubmitScore.png"
+          height="176"
+          src="/Podium.png"
           isLocal={isLocal}
         />
       </Section>
@@ -56,18 +56,6 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
           width="293"
           height="223"
           src="/DisplayScores2.png"
-          isLocal={isLocal}
-        />
-      </Section>
-      <Section
-        title="Compete"
-        description="Compete with your friends to earn first place!"
-      >
-        <Image
-          alt="Slack post showing winners of the day"
-          width="600"
-          height="176"
-          src="/Podium.png"
           isLocal={isLocal}
         />
       </Section>
