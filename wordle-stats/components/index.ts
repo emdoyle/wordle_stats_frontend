@@ -4,5 +4,14 @@ import { WrappedImage } from "./Image";
 import { AddToSlack } from "./AddToSlack";
 import { Footer } from "./Footer";
 import { Layout } from "./Layout";
+import { BackHomeButton } from "./BackHomeButton";
 
-export { AddToSlack, Footer, Layout, Links, Section, WrappedImage as Image };
+export {
+  AddToSlack,
+  BackHomeButton,
+  Footer,
+  Layout,
+  Links,
+  Section,
+  WrappedImage as Image,
+};

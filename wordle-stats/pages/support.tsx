@@ -1,6 +1,5 @@
 import { NextPage } from "next";
-import Link from "next/link";
-import { Footer, Layout } from "../components";
+import { BackHomeButton, Layout } from "../components";
 import styles from "../styles/Home.module.css";
 
 const Support: NextPage = () => {
@@ -17,9 +16,7 @@ const Support: NextPage = () => {
         for any support questions.
       </div>
       <div className={styles.content}>
-        <Link href="/" passHref>
-          <button>Back to Homepage →</button>
-        </Link>
+        <BackHomeButton />
       </div>
     </Layout>
   );
