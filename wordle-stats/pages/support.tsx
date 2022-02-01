@@ -10,7 +10,11 @@ const Support: NextPage = () => {
         <h1 className={styles.title}>Support</h1>
       </div>
       <div className={styles.description}>
-        Please contact me at [email] for any support questions.
+        Please contact me at{" "}
+        <a className={styles.mailto} href="mailto:support@0x63problems.dev">
+          support@0x63problems.dev
+        </a>{" "}
+        for any support questions.
       </div>
       <div className={styles.content}>
         <Link href="/" passHref>

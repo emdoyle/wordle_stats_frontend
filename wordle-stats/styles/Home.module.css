@@ -142,6 +142,15 @@
   margin-left: 0.5rem;
 }
 
+.mailto {
+  text-decoration: underline;
+  transition: color 0.15s linear;
+}
+
+.mailto:hover {
+  color: lightblue;
+}
+
 @media (max-width: 768px) {
   .hide_mobile {
     display: none !important;
