@@ -3,7 +3,11 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Links, Section, WrappedImage } from "../components";
 
-const Home: NextPage = () => {
+type HomePageProps = {
+  isLocal: boolean;
+};
+
+const Home: NextPage<HomePageProps> = ({ isLocal }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,6 +26,7 @@ const Home: NextPage = () => {
             height="40"
             width="139"
             src="https://platform.slack-edge.com/img/add_to_slack@2x.png"
+            isLocal={isLocal}
           />
         </div>
 
@@ -34,6 +39,7 @@ const Home: NextPage = () => {
             width="600"
             height="207"
             src="/SubmitScore.png"
+            isLocal={isLocal}
           />
         </Section>
         <Section
@@ -45,6 +51,7 @@ const Home: NextPage = () => {
             width="600"
             height="107"
             src="/SolutionThread.png"
+            isLocal={isLocal}
           />
         </Section>
         <Section
@@ -56,12 +63,14 @@ const Home: NextPage = () => {
             width="293"
             height="223"
             src="/DisplayScores.png"
+            isLocal={isLocal}
           />
           <WrappedImage
             alt="Slack post showing recent scores and average score for a second user"
             width="293"
             height="223"
             src="/DisplayScores2.png"
+            isLocal={isLocal}
           />
         </Section>
         <Section
@@ -73,6 +82,7 @@ const Home: NextPage = () => {
             width="600"
             height="176"
             src="/Podium.png"
+            isLocal={isLocal}
           />
         </Section>
       </main>
@@ -87,3 +97,14 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export function getStaticProps() {
+  if (process.env.LOCAL) {
+    return {
+      props: {
+        isLocal: true,
+      },
+    };
+  }
+  return { props: {} };
+}
