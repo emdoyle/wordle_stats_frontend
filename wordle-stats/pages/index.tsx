@@ -106,5 +106,5 @@ export function getStaticProps() {
       },
     };
   }
-  return { props: {} };
+  return { props: { isLocal: false } };
 }

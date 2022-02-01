@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["platform.slack-edge.com"],
+    loader: process.env.LOCAL ? undefined : "custom",
   },
 };
 
