@@ -1,5 +1,6 @@
-import { Links } from "./links";
-import { Section } from "./section";
-import { WrappedImage } from "./image";
+import { Links } from "./Links";
+import { Section } from "./Section";
+import { WrappedImage } from "./Image";
+import { AddToSlack } from "./AddToSlack";
 
-export { Links, Section, WrappedImage };
+export { AddToSlack, Links, Section, WrappedImage as Image };

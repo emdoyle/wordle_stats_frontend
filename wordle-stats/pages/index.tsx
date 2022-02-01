@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Links, Section, WrappedImage } from "../components";
+import { Links, Section, Image, AddToSlack } from "../components";
 
 type HomePageProps = {
   isLocal: boolean;
@@ -21,20 +21,14 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
           <h1 className={styles.title}>Wordle Stats</h1>
 
           <p className={styles.description}>A Slack bot for Wordle!</p>
-          <WrappedImage
-            alt="Add to Slack"
-            height="40"
-            width="139"
-            src="https://platform.slack-edge.com/img/add_to_slack@2x.png"
-            isLocal={isLocal}
-          />
+          <AddToSlack isLocal={isLocal} />
         </div>
 
         <Section
           title="Submit"
           description="Submit your scores to track your Wordle performance!"
         >
-          <WrappedImage
+          <Image
             alt="Slack post showing form to submit Wordle score"
             width="600"
             height="207"
@@ -46,7 +40,7 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
           title="Discuss"
           description="Discuss the daily solution with friends!"
         >
-          <WrappedImage
+          <Image
             alt="Slack post showing a post titled '1/31 Solution Thread"
             width="600"
             height="107"
@@ -58,14 +52,14 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
           title="Compare"
           description="Compare your scores over time and track your average!"
         >
-          <WrappedImage
+          <Image
             alt="Slack post showing recent scores and average score for a user"
             width="293"
             height="223"
             src="/DisplayScores.png"
             isLocal={isLocal}
           />
-          <WrappedImage
+          <Image
             alt="Slack post showing recent scores and average score for a second user"
             width="293"
             height="223"
@@ -77,7 +71,7 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
           title="Compete"
           description="Compete with your friends to earn first place!"
         >
-          <WrappedImage
+          <Image
             alt="Slack post showing winners of the day"
             width="600"
             height="176"
