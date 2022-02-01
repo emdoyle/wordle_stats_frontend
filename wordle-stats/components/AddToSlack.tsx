@@ -1,6 +1,6 @@
 import { WrappedImage } from "./Image";
 
-export const AddToSlack = ({ isLocal }: { isLocal: boolean }) => {
+export const AddToSlack = ({ isLocal }: { isLocal?: boolean }) => {
   return (
     <a href="https://wordle-admin.0x63problems.dev/slack/install">
       <WrappedImage
