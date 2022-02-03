@@ -7,12 +7,16 @@ import {
   Layout,
   LoopingVideo,
 } from "../components";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 type HomePageProps = {
   isLocal: boolean;
 };
 
 const Home: NextPage<HomePageProps> = ({ isLocal }) => {
+  const veryWideScreen = useMediaQuery("(min-width: 1400px)");
+  const wideScreen = useMediaQuery("(min-width: 850px)");
+  const onlyWideScreen = !veryWideScreen && wideScreen;
   return (
     <Layout>
       <div className={styles.header}>
@@ -22,13 +26,30 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
         <AddToSlack isLocal={isLocal} />
       </div>
 
-      <LoopingVideo
-        src="/DemoFast.mp4"
-        muted
-        playsInline
-        autoPlay
-        delay={3000}
-      />
+      <div className={styles.video_content}>
+        {veryWideScreen && (
+          <LoopingVideo
+            src="/DemoFast.mp4"
+            width="1238"
+            height="460"
+            muted
+            playsInline
+            autoPlay
+            delay={3000}
+          />
+        )}
+        {onlyWideScreen && (
+          <LoopingVideo
+            src="/SmallDemoFast.mp4"
+            width="800"
+            height="300"
+            muted
+            playsInline
+            autoPlay
+            delay={3000}
+          />
+        )}
+      </div>
 
       <Section
         title="Compete"
