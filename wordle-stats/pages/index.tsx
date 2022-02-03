@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import { Section, Image, AddToSlack, Layout } from "../components";
+import {
+  Section,
+  Image,
+  AddToSlack,
+  Layout,
+  LoopingVideo,
+} from "../components";
 
 type HomePageProps = {
   isLocal: boolean;
@@ -15,6 +21,14 @@ const Home: NextPage<HomePageProps> = ({ isLocal }) => {
         <p className={styles.description}>A Slack bot for Wordle!</p>
         <AddToSlack isLocal={isLocal} />
       </div>
+
+      <LoopingVideo
+        src="/DemoFast.mp4"
+        muted
+        playsInline
+        autoPlay
+        delay={3000}
+      />
 
       <Section
         title="Compete"
