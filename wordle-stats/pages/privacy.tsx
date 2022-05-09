@@ -357,6 +357,13 @@ const PrivacyPolicy = () => {
         means to protect Your Personal Data, We cannot guarantee its absolute
         security.
       </p>
+    <h2>Deletion of Your Personal Data</h2>
+    <p>
+        If You wish to have your Personal Data deleted, You may contact us
+        using the information in the section entitled &quot;Contact Us&quot;
+        to make this request. We will comply with Your request for deletion of
+        Personal Data assuming We can verify You are the subject of said Personal Data.
+    </p>
       <h1>Children&apos;s Privacy</h1>
       <p>
         Our Service does not address anyone under the age of 13. We do not
